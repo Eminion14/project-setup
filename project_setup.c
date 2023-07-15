@@ -7,43 +7,62 @@ int main(){
 	char template[200];
 
     printf("Choose a template\n");
-    printf("[web page], [game], [C project], [C++ project]");
-	printf("Type web, game, C or Cpp");
+    printf("[web page], [game], [C project], [C++ project], [Rust project]\n");
+	printf("Type web, game, c, cpp or rust\n");
     scanf("%s", template);
 
     if (strcmp(template, "web")==0){
+		system("mkdir new_web");
+
         FILE *fptr;
         fptr = fopen("index.html", "w");
 		fptr = fopen("app.js", "w");
 		fptr = fopen("style.css", "w");
 		
+		system("mv index.html  new_web/index.html");
+		system("mv style.css  new_web/style.css");
+		system("mv app.js  new_web/app.js");
+		
 		free(fptr);
 
-		printf("files created successfully");
+		printf("files created successfully\n");
 
     }else if (strcmp(template, "game")==0) {
 		printf("USE GODOT ENGINE!\n");
 		system("godot");
 
-	}else if (strcmp(template, "C")==0) {
-		 FILE *fptr;
-        fptr = fopen("idk.c", "w");
+	}else if (strcmp(template, "c")==0) {
+		system("mkdir c_project");
+
+		FILE *fptr;
+        fptr = fopen("new.c", "w");
+
+		system("mv new.c c_project/new.c");
 
 		free(fptr);
 
-		printf("file created successfully");
+		printf("files created successfully\n");
 
-	}else if (strcmp(template, "Cpp")==0) {
-		 FILE *fptr;
-        fptr = fopen("idk.cpp", "w");
+	}else if (strcmp(template, "cpp")==0) {
+		system("mkdir cpp_project");
+
+		FILE *fptr;
+        fptr = fopen("new.cpp", "w");
+		
+		system("mv new.cpp cpp_project/new.cpp");
 
 		free(fptr);
 
 
-		printf("file created successfully");
+		printf("files created successfully\n");
+
+	}else if(strcmp(template, "rust")==0){
+		system("cargo new rust_project");
+
+		printf("New project created successfully\n");
 
 	}else {
-		printf("that's not an answer");
+		printf("that's not an answer\n");
 	}
  
 	return 0;
