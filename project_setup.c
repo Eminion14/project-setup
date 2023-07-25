@@ -5,6 +5,8 @@
 
 int main(){
 	char template[200];
+    
+    printf("Created by Emilio Ramirez 2023\n");
 
     printf("Choose a template\n");
     printf("[web page], [game], [C project], [C++ project], [Rust project]\n");
@@ -64,6 +66,6 @@ int main(){
 	}else {
 		printf("that's not an answer\n");
 	}
- 
+
 	return 0;
 }
