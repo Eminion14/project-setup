@@ -1,8 +1,9 @@
+//Libraries
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-
+//main function
 int main(){
 	char template[200];
     
@@ -11,6 +12,7 @@ int main(){
 	printf("Type web, game, c, cpp or rust\n");
     scanf("%s", template);
 
+    //Wrb template
     if (strcmp(template, "web")==0){
 		system("mkdir new_web");
 
@@ -27,10 +29,12 @@ int main(){
 
 		printf("files created successfully\n");
 
+    //game template
     }else if (strcmp(template, "game")==0) {
 		printf("USE GODOT ENGINE!\n");
 		system("godot");
 
+        //C project template
 	}else if (strcmp(template, "c")==0) {
 		system("mkdir c_project");
 
@@ -43,6 +47,7 @@ int main(){
 
 		printf("files created successfully\n");
 
+        //C++ project template
 	}else if (strcmp(template, "cpp")==0) {
 		system("mkdir cpp_project");
 
@@ -56,6 +61,7 @@ int main(){
 
 		printf("files created successfully\n");
 
+        //rust project template
 	}else if(strcmp(template, "rust")==0){
 		system("cargo new rust_project");
 
